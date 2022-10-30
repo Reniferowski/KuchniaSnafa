@@ -1,11 +1,30 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "json", "author": "nutra" },
-    { "id": 3, "title": "server", "author": "nutra" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "offers": [
+    { "id": 1, "title": "Soft", "descritpion": "Lekkostrwana dieta dla osób z problemami trawiennymi.",
+    "price": 50, "calories": "2800-3000" },
+    { "id": 2, "title": "Ekonomiczna", "author": "Dieta dla osób które nie mają czasu lub chcęci na przygotowywanie śniadań.",
+    "price": 15, "calories": "1000-1200" },
+    { "id": 3, "title": "Wege", "author": "Dieta dla osób chcących wyeliminować mięso.",
+    "price": 60, "calories": "2500-2800" },
+    { "id": 4, "title": "Wege-ekonomiczna", "author": "Zawiera śdniadania bez zawartości mięsa.",
+    "price": 20, "calories": "900-1100" },
+    { "id": 5, "title": "Mega", "author": "Dieta z zapasem kalorii.",
+    "price": 80, "calories": "3300-3700" },
+    { "id": 5, "title": "Mega-wege", "author": "Bardzo kaloryczna dieta bez zawartości mięsa.",
+    "price": 90, "calories": "3200-3500" },
+    { "id": 6, "title": "Studencki", "author": "Pożegnaj zupki chińskie za bardzo przystępną cenę.",
+    "price": 20, "calories": "1700-2000" },
+    { "id": 7, "title": "Studencki-wege", "author": "Ekonomiczna dieta wege.",
+    "price": 25, "calories": "1500-1800" },
+    { "id": 8, "title": "Dieta Lorda Hagena", "author": "/'Moje jedzenie lubi Nawet sam Lord Hagen./'",
+    "price": 90, "calories": "2500-2800" },
+    { "id": 9, "title": "Dieta z klastoru", "author": "Starodawna receptura w odśweżonym wydaniu.",
+    "price": 70, "calories": "2200-2500" },
+    { "id": 10, "title": "Dieta ze starego obozu", "author": "Poczuj smaki na jakich nasz szef kuchni nauczył się gotować.",
+    "price": 50, "calories": "2000-2200" },
+    { "id": 11, "title": "Dieta ognista", "author": "Niech twój brzuch od środka płonie.",
+    "price": 90, "calories": "2200-2500" },
+    { "id": 9, "title": "Dieta extra", "author": "/'Mogę ją jeść bez końca./'",
+    "price": 100, "calories": "2500-2700" }
+  ]
 }
