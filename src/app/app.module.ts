@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { OffersComponent } from './offers/offers.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { OfferComponent } from './offer/offer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OffersComponent,
-    OffersComponent
+    OffersComponent,
+    OfferComponent
   ],
   imports: [
     BrowserModule,

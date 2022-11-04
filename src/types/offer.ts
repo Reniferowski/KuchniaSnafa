@@ -13,6 +13,10 @@ export class OfferClass {
     this._calories = calories;
   }
 
+  get id(): number {
+    return this._id;
+  }
+
   get title(): string {
     return this._title;
   }
