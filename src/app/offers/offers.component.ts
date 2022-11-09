@@ -10,8 +10,8 @@ import { calcPrice } from 'src/functions/basket';
 })
 export class OffersComponent implements OnInit {
 
-  offers: OfferClass[] = []
-  basket: OfferClass[] = []
+  offers: OfferClass[] = [];
+  tempBasket: OfferClass[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -24,9 +24,8 @@ export class OffersComponent implements OnInit {
     })
 }
 
-  addOffer(std: OfferClass){
-    this.basket.push(new OfferClass(std.id, std.title, std.description, std.price, std.calories));
-    console.log(calcPrice(this.basket));
+  updateCart(product: OfferClass  ) {
+    this.tempBasket.push(product);
+    console.log(this.tempBasket);
   }
-
 }

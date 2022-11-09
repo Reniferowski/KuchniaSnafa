@@ -8,6 +8,7 @@ import { OffersComponent } from './offers/offers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OfferComponent } from './offer/offer.component';
 import { AddToShoppingCartComponent } from './add-to-shopping-cart/add-to-shopping-cart.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AddToShoppingCartComponent } from './add-to-shopping-cart/add-to-shoppi
     OffersComponent,
     OfferComponent,
     AddToShoppingCartComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

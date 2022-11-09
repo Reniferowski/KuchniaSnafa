@@ -1,6 +1,9 @@
 <p [ngClass]="'title'" appPrintTitle color="green" sep="~" >List of offers:</p>
-<div *ngFor="let offer of offers; index as i">
+<div *ngFor="let offer of offers">
   <show-offer [offerForPrint]="offer"></show-offer>
-  <add-to-shopping-cart [actuallOffer]="offer" (addInParentArray)="addOffer($event)" [offerIndex]="i" >
+  <add-to-shopping-cart [actualOffer]="offer" >
   </add-to-shopping-cart>
+</div>
+<div>
+  <add-to-shopping-cart (offerToBasket)="updateCart($event)"></add-to-shopping-cart>
 </div>
