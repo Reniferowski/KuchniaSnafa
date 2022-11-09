@@ -7,7 +7,7 @@ import { OffersComponent } from './offers/offers.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { OfferComponent } from './offer/offer.component';
-import { AddOfferComponent } from './add-offer/add-offer.component';
+import { AddToShoppingCartComponent } from './add-to-shopping-cart/add-to-shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { AddOfferComponent } from './add-offer/add-offer.component';
     OffersComponent,
     OffersComponent,
     OfferComponent,
-    AddOfferComponent
+    AddToShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OfferClass } from 'src/types/offer';
 
 @Component({
-  selector: 'add-offer',
-  templateUrl: './add-offer.component.html',
-  styleUrls: ['./add-offer.component.css']
+  selector: 'add-to-shopping-cart',
+  templateUrl: './add-to-shopping-cart.component.html',
+  styleUrls: ['./add-to-shopping-cart.component.css']
 })
-export class AddOfferComponent implements OnInit {
+export class AddToShoppingCartComponent implements OnInit {
   offerToAdd: OfferClass = new OfferClass(0, '', '', 0, '')
   @Output() addInParentArray: EventEmitter<OfferClass> = new EventEmitter();
 
@@ -24,6 +24,7 @@ export class AddOfferComponent implements OnInit {
     this.offerToAdd.description = this.actuallOffer.description;
     this.offerToAdd.calories = this.actuallOffer.calories;
     this.offerToAdd.price = this.actuallOffer.price;
+    console.log(this.offerToAdd)
     // this.clickedOn = which;  //and change clickedon attribute to display edit form
   }
 

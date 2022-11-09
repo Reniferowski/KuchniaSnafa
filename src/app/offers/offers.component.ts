@@ -19,7 +19,6 @@ export class OffersComponent implements OnInit {
   ngOnInit() {
     this.http.get<OfferClass[]>('http://localhost:3000/offers').subscribe(data => {
     this.offers = data;
-    // console.log(data)
     }, err => {
       alert("Somethink went wrong")
     })
