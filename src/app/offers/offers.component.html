@@ -1,4 +1,6 @@
 <p [ngClass]="'title'" appPrintTitle color="green" sep="~" >List of offers:</p>
 <div *ngFor="let offer of offers; index as i">
   <show-offer [offerForPrint]="offer"></show-offer>
+  <add-offer [actuallOffer]="offer" (addInParentArray)="addOffer($event)" [offerIndex]="i" >
+  </add-offer>
 </div>

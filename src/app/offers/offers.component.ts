@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OfferClass } from 'src/types/offer';
+import { calcPrice } from 'src/functions/basket';
 
 @Component({
   selector: 'app-offers',
@@ -10,6 +11,7 @@ import { OfferClass } from 'src/types/offer';
 export class OffersComponent implements OnInit {
 
   offers: OfferClass[] = []
+  basket: OfferClass[] = []
 
   constructor(private http: HttpClient) {
   }
@@ -22,5 +24,10 @@ export class OffersComponent implements OnInit {
       alert("Somethink went wrong")
     })
 }
+
+  addOffer(std: OfferClass){
+    this.basket.push(new OfferClass(std.id, std.title, std.description, std.price, std.calories));
+    console.log(calcPrice(this.basket));
+  }
 
 }

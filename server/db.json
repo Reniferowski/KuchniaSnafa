@@ -24,7 +24,7 @@
     "price": 50, "calories": "2000-2200" },
     { "id": 11, "title": "Dieta ognista", "description": "Niech twój brzuch od środka płonie.",
     "price": 90, "calories": "2200-2500" },
-    { "id": 9, "title": "Dieta extra", "description": "/'Mogę ją jeść bez końca./'",
+    { "id": 12, "title": "Dieta extra", "description": "/'Mogę ją jeść bez końca./'",
     "price": 100, "calories": "2500-2700" }
   ]
 }

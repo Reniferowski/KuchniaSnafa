@@ -17,6 +17,10 @@ export class OfferClass {
     return this._id;
   }
 
+  set id(id: number) {
+    this._id = id;
+  }
+
   get title(): string {
     return this._title;
   }
