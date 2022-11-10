@@ -4,17 +4,14 @@ import { OfferClass } from 'src/types/offer';
 @Component({
   selector: 'shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css']
+  styleUrls: ['./shopping-cart.component.css'],
 })
 export class ShoppingCartComponent implements OnInit {
-
   cartsOffers: OfferClass[] = [];
 
-  @Input() offerToAdd!: OfferClass;
+  @Input() products!: OfferClass[];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

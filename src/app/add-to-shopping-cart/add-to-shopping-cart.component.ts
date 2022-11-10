@@ -26,6 +26,7 @@ export class AddToShoppingCartComponent implements OnInit {
     this.offerToAdd.description = this.actualOffer.description;
     this.offerToAdd.calories = this.actualOffer.calories;
     this.offerToAdd.price = this.actualOffer.price;
+    console.log(this.offerToAdd)
     this.offerToBasket.emit(this.offerToAdd);
     // this.clickedOn = which;  //and change clickedon attribute to display edit form
   }
