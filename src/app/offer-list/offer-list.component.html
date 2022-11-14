@@ -1,0 +1,16 @@
+<h1>Catering offers</h1>
+<br/>
+<div *ngFor="let offer of offers">
+  <h1>
+    <a [title]="'Dieta ' + offer.title + ' details'">
+      {{offer.title}}
+    </a>
+  </h1>
+  <p *ngIf="offer.description">
+    {{offer.description}}
+  </p>
+
+  <button type="button" (click)="add()">+ Add</button>
+  <offer-details [offer] = offer>
+  </offer-details>
+</div>

@@ -1,28 +1,32 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OffersComponent } from './offers/offers.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { OfferComponent } from './offer/offer.component';
-import { AddToShoppingCartComponent } from './add-to-shopping-cart/add-to-shopping-cart.component';
+import { OfferListComponent } from './offer-list/offer-list.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OffersComponent,
-    OffersComponent,
-    OfferComponent,
-    AddToShoppingCartComponent,
-    ShoppingCartComponent,
+    OfferListComponent,
+    TopBarComponent,
+    OfferDetailsComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      { path: '', component: OfferListComponent },
+    ])
   ],
   schemas: [
     NO_ERRORS_SCHEMA

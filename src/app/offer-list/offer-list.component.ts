@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OfferClass } from 'src/types/offer';
-import { calcPrice } from 'src/functions/basket';
 
 @Component({
-  selector: 'app-offers',
-  templateUrl: './offers.component.html',
-  styleUrls: ['./offers.component.css'],
+  selector: 'app-offer-list',
+  templateUrl: './offer-list.component.html',
+  styleUrls: ['./offer-list.component.css']
 })
-export class OffersComponent implements OnInit {
+export class OfferListComponent implements OnInit {
   offers: OfferClass[] = [];
-  tempBasket: OfferClass[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -25,8 +23,8 @@ export class OffersComponent implements OnInit {
     );
   }
 
-  updateCart(product: OfferClass) {
-    this.tempBasket.push(product);
-    console.log(this.tempBasket);
+  add() {
+    window.alert('The offer has been added to basket!');
   }
+
 }

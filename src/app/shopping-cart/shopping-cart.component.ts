@@ -1,17 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { OfferClass } from 'src/types/offer';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'shopping-cart',
+  selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css'],
+  styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  cartsOffers: OfferClass[] = [];
 
-  @Input() products!: OfferClass[];
+  constructor() { }
 
-  constructor() {}
+  ngOnInit(): void {
+  }
 
-  ngOnInit(): void {}
 }
