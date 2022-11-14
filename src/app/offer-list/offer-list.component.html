@@ -10,7 +10,8 @@
     {{offer.description}}
   </p>
 
-  <button type="button" (click)="add()">+ Add</button>
+  <add-to-shopping-cart [offer] = offer>
+  </add-to-shopping-cart>
   <offer-details [offer] = offer>
   </offer-details>
 </div>
