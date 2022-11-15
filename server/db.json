@@ -1,30 +1,108 @@
 {
   "offers": [
-    { "id": 1, "title": "Soft", "description": "Lekkostrawna dieta dla osób z problemami trawiennymi.",
-    "price": 50, "calories": "2800-3000" },
-    { "id": 2, "title": "Ekonomiczna", "description": "Dieta dla osób które nie mają czasu lub chcęci na przygotowywanie śniadań.",
-    "price": 15, "calories": "1000-1200" },
-    { "id": 3, "title": "Wege", "description": "Dieta dla osób chcących wyeliminować mięso.",
-    "price": 60, "calories": "2500-2800" },
-    { "id": 4, "title": "Wege-ekonomiczna", "description": "Zawiera śniadania bez zawartości mięsa.",
-    "price": 20, "calories": "900-1100" },
-    { "id": 5, "title": "Mega", "description": "Dieta z zapasem kalorii.",
-    "price": 80, "calories": "3300-3700" },
-    { "id": 5, "title": "Mega-wege", "description": "Bardzo kaloryczna dieta bez zawartości mięsa.",
-    "price": 90, "calories": "3200-3500" },
-    { "id": 6, "title": "Studencki", "description": "Pożegnaj zupki chińskie za bardzo przystępną cenę.",
-    "price": 20, "calories": "1700-2000" },
-    { "id": 7, "title": "Studencki-wege", "description": "Ekonomiczna dieta wege.",
-    "price": 25, "calories": "1500-1800" },
-    { "id": 8, "title": "Dieta Lorda Hagena", "description": "/'Moje jedzenie lubi Nawet sam Lord Hagen./'",
-    "price": 90, "calories": "2500-2800" },
-    { "id": 9, "title": "Dieta z klasztoru", "description": "Starodawna receptura w odświeżonym wydaniu.",
-    "price": 70, "calories": "2200-2500" },
-    { "id": 10, "title": "Dieta ze starego obozu", "description": "Poczuj smaki na jakich nasz szef kuchni nauczył się gotować.",
-    "price": 50, "calories": "2000-2200" },
-    { "id": 11, "title": "Dieta ognista", "description": "Niech twój brzuch od środka płonie.",
-    "price": 90, "calories": "2200-2500" },
-    { "id": 12, "title": "Dieta extra", "description": "/'Mogę ją jeść bez końca./'",
-    "price": 100, "calories": "2500-2700" }
+    {
+      "id": 1,
+      "title": "Soft",
+      "description": "Lekkostrawna dieta dla osób z problemami trawiennymi.",
+      "price": 50,
+      "calories": "2800-3000",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Ekonomiczna",
+      "description": "Dieta dla osób które nie mają czasu lub chcęci na przygotowywanie śniadań.",
+      "price": 15,
+      "calories": "1000-1200",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Wege",
+      "description": "Dieta dla osób chcących wyeliminować mięso.",
+      "price": 60,
+      "calories": "2500-2800",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Wege-ekonomiczna",
+      "description": "Zawiera śniadania bez zawartości mięsa.",
+      "price": 20,
+      "calories": "900-1100",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Mega",
+      "description": "Dieta z zapasem kalorii.",
+      "price": 80,
+      "calories": "3300-3700",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Mega-wege",
+      "description": "Bardzo kaloryczna dieta bez zawartości mięsa.",
+      "price": 90,
+      "calories": "3200-3500",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Studencki",
+      "description": "Pożegnaj zupki chińskie za bardzo przystępną cenę.",
+      "price": 20,
+      "calories": "1700-2000",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Studencki-wege",
+      "description": "Ekonomiczna dieta wege.",
+      "price": 25,
+      "calories": "1500-1800",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Dieta Lorda Hagena",
+      "description": "/'Moje jedzenie lubi Nawet sam Lord Hagen./'",
+      "price": 90,
+      "calories": "2500-2800",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Dieta z klasztoru",
+      "description": "Starodawna receptura w odświeżonym wydaniu.",
+      "price": 70,
+      "calories": "2200-2500",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Dieta ze starego obozu",
+      "description": "Poczuj smaki na jakich nasz szef kuchni nauczył się gotować.",
+      "price": 50,
+      "calories": "2000-2200",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Dieta ognista",
+      "description": "Niech twój brzuch od środka płonie.",
+      "price": 90,
+      "calories": "2200-2500",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Dieta extra",
+      "description": "/'Mogę ją jeść bez końca./'",
+      "price": 100,
+      "calories": "2500-2700",
+      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+    }
   ]
 }

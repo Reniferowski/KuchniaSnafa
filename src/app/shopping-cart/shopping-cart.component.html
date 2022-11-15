@@ -1,1 +1,7 @@
-<add-to-shopping-cart (offerToShoppingCart)="addToShoppingCart($event)"></add-to-shopping-cart>
+<a class="button fancy-button checkoutButton" (click)="showCart()">Checkout</a>
+
+<div class="shoppingCartWrapper" *ngIf="isShow">
+  <div *ngFor="let product of shoppingCart" style="padding: 0.5em">
+    {{ product.title }}
+  </div>
+</div>

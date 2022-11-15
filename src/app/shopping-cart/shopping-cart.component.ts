@@ -1,23 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OfferClass } from 'src/types/offer';
+import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
   selector: 'shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css']
+  styleUrls: ['./shopping-cart.component.css'],
 })
 export class ShoppingCartComponent implements OnInit {
   shoppingCart: OfferClass[] = [];
+  isShow: boolean = false;
 
-  // @Input()
-  constructor() { }
+  constructor(private shoppingCartService: ShoppingCartService) {}
 
   ngOnInit(): void {
+    this.shoppingCart = this.shoppingCartService.products;
   }
 
-  addToShoppingCart(offer: OfferClass){
-    console.log(offer);
-    this.shoppingCart.push(offer);
+  showCart() {
+    console.log(this.shoppingCart);
+    this.isShow = !this.isShow;
   }
-
 }

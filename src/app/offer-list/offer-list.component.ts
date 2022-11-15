@@ -5,7 +5,7 @@ import { OfferClass } from 'src/types/offer';
 @Component({
   selector: 'app-offer-list',
   templateUrl: './offer-list.component.html',
-  styleUrls: ['./offer-list.component.css']
+  styleUrls: ['./offer-list.component.css'],
 })
 export class OfferListComponent implements OnInit {
   offers: OfferClass[] = [];
@@ -26,5 +26,4 @@ export class OfferListComponent implements OnInit {
   add() {
     window.alert('The offer has been added to basket!');
   }
-
 }
