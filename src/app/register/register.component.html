@@ -1,14 +1,56 @@
 <h1>Register</h1>
-  <form>
-  <form [formGroup] = 'registerForm' (ngSubmit) = "register()">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input formControlName = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input formControlName = "password" type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary">Register</button>
-</form>
+<form>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <div class="mb-3" formGroupName="address">
+      <label class="form-label">Miasto</label>
+      <input
+        formControlName="city"
+        type="text"
+        class="form-control"
+        id="city"
+      />
+      <label class="form-label">Ulica</label>
+      <input
+        formControlName="street"
+        type="text"
+        class="form-control"
+        id="street"
+      />
+      <label class="form-label">Numer Domu</label>
+      <input
+        formControlName="houseNumber"
+        type="number"
+        class="form-control"
+        id="houseNumber"
+      />
+      <label class="form-label">Kod-Pocztowy</label>
+      <input
+        formControlName="postCode"
+        type="text"
+        class="form-control"
+        id="postCode"
+        pattern="[0-9]*"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
   </form>
+</form>

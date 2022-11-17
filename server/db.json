@@ -107,19 +107,21 @@
   ],
   "users": [
     {
-      "email": "",
-      "password": "",
-      "id": 1
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 2
-    },
-    {
       "email": "testes@test.test",
       "password": "fdddsds",
-      "id": 3
+      "id": 1,
+      "address": {}
+    },
+    {
+      "email": "dsafsa",
+      "password": "111",
+      "address": {
+        "city": "ewq",
+        "street": "fds",
+        "houseNumber": 2115,
+        "postCode": "16-000"
+      },
+      "id": 2
     }
   ]
 }
