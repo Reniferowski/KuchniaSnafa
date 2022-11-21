@@ -104,5 +104,24 @@
       "calories": "2500-2700",
       "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
     }
+  ],
+  "users": [
+    {
+      "email": "testes@test.test",
+      "password": "fdddsds",
+      "id": 1,
+      "address": {}
+    },
+    {
+      "email": "dsafsa",
+      "password": "111",
+      "address": {
+        "city": "ewq",
+        "street": "fds",
+        "houseNumber": 2115,
+        "postCode": "16-000"
+      },
+      "id": 2
+    }
   ]
 }
