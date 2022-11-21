@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { postCodeValidator } from '../validators/postCodeValidator';
 
 @Component({
   selector: 'app-register',
@@ -15,18 +16,20 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router
-  ) {}
-  ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      email: '',
-      password: '',
-      address: this.formBuilder.group({
-        city: '',
-        street: '',
-        houseNumber: 0,
-        postCode: '',
+  ) {
+    this.registerForm = new FormGroup({
+      email: new FormControl('', [Validators.email, Validators.required]),
+      password: new FormControl(''),
+      address: new FormGroup({
+        city: new FormControl(''),
+        street: new FormControl(''),
+        houseNumber: new FormControl(0),
+        postCode: new FormControl('', [postCodeValidator]),
     }),
     });
+  }
+  ngOnInit(): void {
+
   }
 
   register() {

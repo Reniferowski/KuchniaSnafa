@@ -1,6 +1,6 @@
 <h1>Register</h1>
 <form>
-  <form [formGroup]="registerForm" (ngSubmit)="register()">
+  <form [formGroup]="registerForm" (ngSubmit)="register()" name="myForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input
@@ -44,13 +44,22 @@
       />
       <label class="form-label">Kod-Pocztowy</label>
       <input
-        formControlName="postCode"
+      name="postCodeInput"
+      [(ngModel)]="postCode"
+      formControlName="postCode"
         type="text"
         class="form-control"
         id="postCode"
         pattern="[0-9]*"
+        ng-model="text"
       />
     </div>
+    <span *ngIf="postCode.errors?.['PostCodeValidatorDirective']">Not a valid e-mail address</span>
+
+    <input [(ngModel)]="name" #model="ngModel" appSomeAsyncValidator>
+<app-spinner *ngIf="model.pending"></app-spinner>
+
+    <br />
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
 </form>

@@ -15,6 +15,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PostCodeValidatorDirective } from './directives/post-code-validator.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     AddToShoppingCartComponent,
     ShoppingCartComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PostCodeValidatorDirective
   ],
   imports: [
     BrowserModule,
