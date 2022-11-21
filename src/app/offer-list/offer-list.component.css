@@ -1,0 +1,35 @@
+.offersWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  justify-items: center;
+}
+
+.offer {
+  width: 20em;
+  height: 30em;
+  border-radius: 1em;
+  box-shadow: 0 0 0.5em 0.25em;
+  position: relative;
+  overflow: hidden;
+}
+
+.offerInfo {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+
+.offerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.offer:hover > .offerImage {
+  top: 100;
+  left: 100;
+  transform: scale(1.5);
+}

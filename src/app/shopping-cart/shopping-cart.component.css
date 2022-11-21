@@ -1,0 +1,15 @@
+.shoppingCartWrapper {
+  background-color: white;
+  width: 200px;
+  position: absolute;
+  top: 45;
+  right: 14;
+  z-index: 5;
+}
+
+.checkoutButton {
+  margin: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

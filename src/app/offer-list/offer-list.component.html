@@ -1,0 +1,21 @@
+<h1>Catering offers</h1>
+<br />
+<div class="offersWrapper">
+  <div class="offer" *ngFor="let offer of offers">
+    <img class="offerImage" src="{{ offer.photoUrl }}" alt="photo" />
+    <div class="offerInfo">
+      <h1>
+        <a [title]="'Dieta ' + offer.title + ' details'">
+          {{ offer.title }}
+        </a>
+      </h1>
+      <p *ngIf="offer.description">
+        {{ offer.description }}
+      </p>
+
+      <add-to-shopping-cart [offer]="offer"> </add-to-shopping-cart>
+      <offer-details [offer]="offer"> </offer-details>
+    </div>
+  </div>
+
+</div>
