@@ -18,7 +18,6 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   showCart() {
-    console.log(this.shoppingCart);
     this.isShow = !this.isShow;
   }
 }
