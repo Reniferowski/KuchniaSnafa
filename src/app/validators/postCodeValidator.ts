@@ -1,7 +1,9 @@
-import { FormControl} from '@angular/forms';
+import { AbstractControl, ValidationErrors} from '@angular/forms';
 
-export function postCodeValidator(control: FormControl): {[key: string]: any} {
-  const surnameValue = control.value;
-  const regexp: RegExp=/^[a-z]+$/i;
-  return regexp.test(surnameValue)? {onlyLetters: false} : {onlyLetters: true};
+export class CustomValidators {
+  static postCodeValidator(control: AbstractControl): ValidationErrors {
+    const postCode = control.value;
+    const regexp = new RegExp(/^[0-9]{2}-[0-9]{3}$/);
+    return regexp.test(postCode)? null as any: {invalid: true};
+  }
 }

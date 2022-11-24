@@ -1,6 +1,6 @@
 <h1>Register</h1>
 <form>
-  <form [formGroup]="registerForm" (ngSubmit)="register()" name="myForm">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input
@@ -19,8 +19,6 @@
         class="form-control"
         id="exampleInputPassword1"
       />
-    </div>
-    <div class="mb-3" formGroupName="address">
       <label class="form-label">Miasto</label>
       <input
         formControlName="city"
@@ -45,21 +43,15 @@
       <label class="form-label">Kod-Pocztowy</label>
       <input
       name="postCodeInput"
-      [(ngModel)]="postCode"
       formControlName="postCode"
         type="text"
         class="form-control"
         id="postCode"
-        pattern="[0-9]*"
-        ng-model="text"
       />
     </div>
-    <span *ngIf="postCode.errors?.['PostCodeValidatorDirective']">Not a valid e-mail address</span>
-
-    <input [(ngModel)]="name" #model="ngModel" appSomeAsyncValidator>
-<app-spinner *ngIf="model.pending"></app-spinner>
-
+    <p *ngIf="registerForm.controls['postCode'].hasError('invalid')">Nieprawidłowy kod pocztowy</p>
     <br />
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button *ngIf="!registerForm.valid" disabled type="submit" class="btn btn-primary">Register</button>
+    <button *ngIf="registerForm.valid" type="submit" class="btn btn-primary">Register</button>
   </form>
 </form>
