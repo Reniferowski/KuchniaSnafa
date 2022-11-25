@@ -13,17 +13,18 @@ import { CustomValidators } from '../validators/postCodeValidator';
   styleUrls: ['./edit-profile.component.css'],
 })
 export class EditProfileComponent implements OnInit {
-  public editUser!: FormGroup;
+  public editForm!: FormGroup;
   public userToEdit: User;
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private http: HttpClient
   ) {
-    this.editUser = this.formBuilder.group({
+    this.editForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required]],
-      city: ['', [Validators.required]],
+      city: [''],
       street: ['', [Validators.required]],
       houseNumber: [0, [Validators.required]],
       postCode: ['', [CustomValidators.postCodeValidator]],
@@ -33,7 +34,7 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.userToEdit);
-    this.editUser.setValue({
+    this.editForm.setValue({
       email: this.userToEdit?.email || '',
       password: this.userToEdit?.password || '',
       city: this.userToEdit?.city || '',
@@ -41,5 +42,12 @@ export class EditProfileComponent implements OnInit {
       houseNumber: this.userToEdit?.houseNumber || '',
       postCode: this.userToEdit?.postCode || '',
     });
+  }
+
+  edit() {
+    console.log('ee?');
+    this.http
+      .put<User>('http://localhost:3000/users/' + this.userToEdit.id, this.editForm.value)
+      .subscribe();
   }
 }
