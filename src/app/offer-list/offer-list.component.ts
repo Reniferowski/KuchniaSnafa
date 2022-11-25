@@ -35,6 +35,6 @@ export class OfferListComponent implements OnInit {
 
   essa(offer: OfferClass) {
     this.details.setOffer(offer);
-    this.router.navigate([offer.id]);
+    this.router.navigate([offer.title.replaceAll(' ', '-')]);
   }
 }
