@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OfferClass } from 'src/types/offer';
 import { ShoppingCartService } from '../services/shopping-cart.service';
 
@@ -11,7 +12,8 @@ export class ShoppingCartComponent implements OnInit {
   shoppingCart: OfferClass[] = [];
   isShow: boolean = false;
 
-  constructor(private shoppingCartService: ShoppingCartService) {}
+
+  constructor(private shoppingCartService: ShoppingCartService, private router: Router) {}
 
   ngOnInit(): void {
     this.shoppingCart = this.shoppingCartService.products;
@@ -19,5 +21,9 @@ export class ShoppingCartComponent implements OnInit {
 
   showCart() {
     this.isShow = !this.isShow;
+  }
+
+  setOrder() {
+    this.router.navigate(['order'])
   }
 }

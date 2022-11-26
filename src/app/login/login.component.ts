@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../services/user.service';
 import { User } from 'src/types/user';
-import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<any>('http://localhost:3000/users').subscribe(
+    this.http.get<User[]>('http://localhost:3000/users').subscribe(
       (res) => {
         const user = res.find((a: User) => {
           return (
@@ -38,7 +37,6 @@ export class LoginComponent implements OnInit {
         });
         if (user) {
           alert('Udało się zalogować');
-          //this.userService.setLoggedUser(user);
           this.userService.updateUserData(user);
           this.loginForm.reset();
           this.router.navigate(['']);

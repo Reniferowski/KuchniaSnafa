@@ -2,6 +2,9 @@
 
 <div class="shoppingCartWrapper" *ngIf="isShow">
   <div *ngFor="let product of shoppingCart" style="padding: 0.5em">
-    {{ product.title }}
+    {{ product.title | uppercase}}
+  </div>
+  <div *ngIf="shoppingCart.length > 0">
+    <button (click)="setOrder()">Złóż zamówienie</button>
   </div>
 </div>

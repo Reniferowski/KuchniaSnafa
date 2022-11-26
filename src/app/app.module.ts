@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { OrderComponent } from './order/order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     RegisterComponent,
     ProfileComponent,
     EditProfileComponent,
+    OrderComponent,
   ],
   imports: [
     FormsModule,

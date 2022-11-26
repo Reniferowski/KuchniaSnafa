@@ -6,15 +6,15 @@
     <div class="offerInfo">
       <h1>
         <a [title]="'Dieta ' + offer.title + ' details'">
-          {{ offer.title }}
+          {{ offer.title}}
         </a>
       </h1>
       <p *ngIf="offer.description">
-        {{ offer.description }}
+        {{ offer.description | lowercase}}
       </p>
 
-      <add-to-shopping-cart [offer]="offer"> </add-to-shopping-cart>
-      <button (click)="essa(offer)">Poka te detale dla jego</button>
+      <add-to-shopping-cart *ngIf="actualLogedUser !== undefined" [offer]="offer"> </add-to-shopping-cart>
+      <button (click)="showDetails(offer)">Detale</button>
     </div>
   </div>
 </div>

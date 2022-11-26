@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { User } from 'src/types/user';
 import { UserService } from '../services/user.service';
 import { CustomValidators } from '../validators/postCodeValidator';
@@ -19,7 +18,8 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     this.editForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -33,7 +33,6 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.userToEdit);
     this.editForm.setValue({
       email: this.userToEdit?.email || '',
       password: this.userToEdit?.password || '',
@@ -45,9 +44,15 @@ export class EditProfileComponent implements OnInit {
   }
 
   edit() {
-    console.log('ee?');
     this.http
       .put<User>('http://localhost:3000/users/' + this.userToEdit.id, this.editForm.value)
       .subscribe();
+  }
+
+  delete() {
+    this.http.delete('http://localhost:3000/users/' + this.userToEdit.id)
+        .subscribe();
+      alert("Delete successful");
+    this.router.navigate(['login']);
   }
 }

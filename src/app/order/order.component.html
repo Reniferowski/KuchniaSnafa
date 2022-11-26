@@ -1,0 +1,15 @@
+<div>
+  <div *ngFor="let product of shoppingCart">
+    {{ product.title }}
+  </div>
+  <div>
+    <p>{{ totalPrice }}</p>
+  </div>
+  <div>
+    <input type="text" name="promocode" placeholder="kod rabatowy" [(ngModel)]="promo">
+    <button (click)="checkPromoCode()" type="submit">Dodaj kod</button>
+  </div>
+  <div>
+    <button (click)="order()">Złóż zamówienie </button>
+  </div>
+</div>
