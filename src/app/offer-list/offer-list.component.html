@@ -9,9 +9,8 @@
           {{ offer.title }}
         </a>
       </h1>
-      <!-- *ngIf="actualLogedUser !== undefined" -->
       <div class="buttons">
-        <add-to-shopping-cart  [offer]="offer"></add-to-shopping-cart>
+        <add-to-shopping-cart  [offer]="offer" *ngIf="actualLogedUser !== undefined"></add-to-shopping-cart>
         <button (click)="showDetails(offer)">Szczegóły</button>
       </div>
     </div>
