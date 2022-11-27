@@ -1,57 +1,52 @@
-<h1>Register</h1>
-<form>
-  <form [formGroup]="registerForm" (ngSubmit)="register()">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
+<div class="formWrapper">
+  <h1>Zarejestruj się</h1>
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+        <input
         formControlName="email"
         type="email"
-        class="form-control"
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
+        placeholder="Adres E-mail"
+        />
+        <p *ngIf="registerForm.controls['email'].hasError('required')">Brak wartości email</p>
+        <p *ngIf="registerForm.controls['email'].hasError('email')">Nieprawidłowy email</p>
+        <input
         formControlName="password"
         type="password"
-        class="form-control"
         id="exampleInputPassword1"
-      />
-      <label class="form-label">Miasto</label>
-      <input
+        placeholder="Hasło"
+        />
+        <p *ngIf="registerForm.controls['password'].hasError('required')">Brak wartości hasło</p>
+        <input
         formControlName="city"
         type="text"
-        class="form-control"
         id="city"
-      />
-      <label class="form-label">Ulica</label>
-      <input
+        placeholder="Miasto"
+        />
+        <p *ngIf="registerForm.controls['city'].hasError('required')">Brak wartości miasto</p>
+        <input
         formControlName="street"
         type="text"
-        class="form-control"
         id="street"
-      />
-      <label class="form-label">Numer Domu</label>
-      <input
+        placeholder="Ulica"
+        />
+        <p *ngIf="registerForm.controls['street'].hasError('required')">Brak wartości ulica</p>
+        <input
         formControlName="houseNumber"
         type="number"
-        class="form-control"
         id="houseNumber"
-      />
-      <label class="form-label">Kod-Pocztowy</label>
-      <input
-      name="postCodeInput"
-      formControlName="postCode"
+        placeholder="Numer domu"
+        />
+        <p *ngIf="registerForm.controls['houseNumber'].hasError('required')">Brak numeru domu</p>
+        <input
+        name="postCodeInput"
+        formControlName="postCode"
         type="text"
-        class="form-control"
         id="postCode"
-      />
-    </div>
-    <p *ngIf="registerForm.controls['postCode'].hasError('invalid')">Nieprawidłowy kod pocztowy</p>
-    <br />
-    <button *ngIf="!registerForm.valid" disabled type="submit" class="btn btn-primary">Register</button>
-    <button *ngIf="registerForm.valid" type="submit" class="btn btn-primary">Register</button>
-  </form>
-</form>
+        placeholder="Kod-Pocztowy"
+        />
+        <p *ngIf="registerForm.controls['postCode'].hasError('invalid')">Nieprawidłowy kod pocztowy</p>
+      <button appButtonDisplay [condition]="!registerForm.valid" type="submit">Register</button>
+    </form>
+
+</div>

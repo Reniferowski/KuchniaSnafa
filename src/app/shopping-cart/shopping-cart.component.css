@@ -1,10 +1,14 @@
 .shoppingCartWrapper {
   background-color: white;
-  width: 200px;
+  width: 22em;
+  padding: 1.5em;
   position: absolute;
-  top: 45;
+  top: 14;
   right: 14;
-  z-index: 5;
+  border-radius: 1em 2em 1em 1em;
+  z-index: 1;
+  font-size: 0.8rem;
+  border: 0.5px solid black;
 }
 
 .checkoutButton {
@@ -12,4 +16,13 @@
   position: absolute;
   top: 0;
   right: 0;
+  border: 0.2em solid black;
+  padding: 0.5em;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.orderInfo{
+  padding-top: 1.5em;
+  flex-direction: row;
 }

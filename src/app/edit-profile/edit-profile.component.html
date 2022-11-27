@@ -1,71 +1,55 @@
-<h1>Edit</h1>
-<form>
-  <form [formGroup]="editForm" (ngSubmit)="edit()">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input
-        formControlName="email"
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input
-        formControlName="password"
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-      />
-      <label class="form-label">Miasto</label>
-      <input
-        formControlName="city"
-        type="text"
-        class="form-control"
-        id="city"
-      />
-      <label class="form-label">Ulica</label>
-      <input
-        formControlName="street"
-        type="text"
-        class="form-control"
-        id="street"
-      />
-      <label class="form-label">Numer Domu</label>
-      <input
-        formControlName="houseNumber"
-        type="number"
-        class="form-control"
-        id="houseNumber"
-      />
-      <label class="form-label">Kod-Pocztowy</label>
-      <input
-        name="postCodeInput"
-        formControlName="postCode"
-        type="text"
-        class="form-control"
-        id="postCode"
-      />
-    </div>
-    <p *ngIf="editForm.controls['postCode'].hasError('invalid')">
-      Nieprawidłowy kod pocztowy
-    </p>
-    <br />
-    <button
-      *ngIf="!editForm.valid"
-      disabled
-      type="submit"
-      class="btn btn-primary"
-    >
-      Register
-    </button>
-    <button *ngIf="editForm.valid" type="submit" class="btn btn-primary">
-      Register
-    </button>
-    <button (click)="delete()" type="submit" class="btn btn-primary">
-      Delete
+<div class="formWrapper">
+
+  <h1>Edytuj swoje dane</h1>
+  <form class="form" [formGroup]="editForm" (ngSubmit)="edit()">
+    <input
+      formControlName="email"
+      type="email"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Adres E-mail"
+    />
+    <p *ngIf="editForm.controls['email'].hasError('required')">Brak wartości email</p>
+    <p *ngIf="editForm.controls['email'].hasError('email')">Nieprawidłowy email</p>
+    <input
+      formControlName="password"
+      type="password"
+      id="exampleInputPassword1"
+      placeholder="Hasło"
+    />
+    <p *ngIf="editForm.controls['password'].hasError('required')">Brak wartości hasło</p>
+    <input
+      formControlName="city"
+      type="text"
+      id="city"
+      placeholder="Miasto"
+    />
+    <p *ngIf="editForm.controls['city'].hasError('required')">Brak wartości miasto</p>
+    <input
+      formControlName="street"
+      type="text"
+      id="street"
+      placeholder="Ulica"
+    />
+    <p *ngIf="editForm.controls['street'].hasError('required')">Brak wartości ulica</p>
+    <input
+      formControlName="houseNumber"
+      type="number"
+      id="houseNumber"
+      placeholder="Numer domu"
+    />
+    <p *ngIf="editForm.controls['houseNumber'].hasError('required')">Brak numeru domu</p>
+    <input
+      name="postCodeInput"
+      formControlName="postCode"
+      type="text"
+      id="postCode"
+      placeholder="Kod-Pocztowy"
+    />
+    <p *ngIf="editForm.controls['postCode'].hasError('invalid')">Nieprawidłowy kod pocztowy</p>
+    <button appButtonDisplay [condition]="!editForm.valid" type="submit">Zapisz zmiany</button>
+    <button (click)="delete()" type="submit" id="delete">
+      Usuń konto
     </button>
   </form>
-</form>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OfferClass } from 'src/types/offer';
 import { OfferDetailsService } from '../services/offer-details.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'offer-details',
@@ -11,7 +12,7 @@ export class OfferDetailsComponent implements OnInit {
   public offer: OfferClass;
   isClicked: boolean = false;
 
-  constructor(private details: OfferDetailsService) {
+  constructor(private details: OfferDetailsService, private router: Router) {
     this.offer = details.getOffer();
   }
 
@@ -19,5 +20,8 @@ export class OfferDetailsComponent implements OnInit {
 
   showDetails() {
     this.isClicked = !this.isClicked;
+  }
+  back() {
+    this.router.navigate(['']);
   }
 }

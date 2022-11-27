@@ -1,20 +1,19 @@
-<h1>Catering offers</h1>
-<br />
+<h1>Lista dostępnych cateringów</h1>
+<input class="filter" type="text" [(ngModel)]="searchText" placeholder="Wyszukaj catering"/>
 <div class="offersWrapper">
-  <div class="offer" *ngFor="let offer of offers">
+  <div class="offer" *ngFor="let offer of offers | searchFilter: searchText">
     <img class="offerImage" src="{{ offer.photoUrl }}" alt="photo" />
     <div class="offerInfo">
       <h1>
         <a [title]="'Dieta ' + offer.title + ' details'">
-          {{ offer.title}}
+          {{ offer.title }}
         </a>
       </h1>
-      <p *ngIf="offer.description">
-        {{ offer.description | lowercase}}
-      </p>
-
-      <add-to-shopping-cart *ngIf="actualLogedUser !== undefined" [offer]="offer"> </add-to-shopping-cart>
-      <button (click)="showDetails(offer)">Detale</button>
+      <!-- *ngIf="actualLogedUser !== undefined" -->
+      <div class="buttons">
+        <add-to-shopping-cart  [offer]="offer"></add-to-shopping-cart>
+        <button (click)="showDetails(offer)">Szczegóły</button>
+      </div>
     </div>
   </div>
 </div>

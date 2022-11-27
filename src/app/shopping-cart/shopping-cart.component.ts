@@ -10,6 +10,7 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
   shoppingCart: OfferClass[] = [];
+  totalPrice: number = 0;
   isShow: boolean = false;
 
 
@@ -20,6 +21,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   showCart() {
+    this.totalPrice = this.shoppingCart.reduce((price,element) => price + element.price, 0);
     this.isShow = !this.isShow;
   }
 

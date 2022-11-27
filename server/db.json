@@ -14,7 +14,7 @@
       "description": "Dieta dla osób które nie mają czasu lub chcęci na przygotowywanie śniadań.",
       "price": 15,
       "calories": "1000-1200",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://polki.pl/foto/4_3_LARGE/dieta-weganska-jadlospis-i-przepisy-na-5-dni-opracowane-przez-dietetyka-2455920.jpg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "Dieta dla osób chcących wyeliminować mięso.",
       "price": 60,
       "calories": "2500-2800",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "http://bi.gazeta.pl/im/b4/08/15/z22054324V,Lepiej-podjadac-male-porcje--bo-wtedy-zwiazki-czyn.jpg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "description": "Zawiera śniadania bez zawartości mięsa.",
       "price": 20,
       "calories": "900-1100",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "description": "Dieta z zapasem kalorii.",
       "price": 80,
       "calories": "3300-3700",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://image.freepik.com/darmowe-zdjecie/widok-z-gory-pyszna-salatka-owocowa-wewnatrz-talerza-ze-swiezymi-owocami-na-szarym-drzewie-owocowym-egzotyczna-tropikalna-fotografia-dojrzala-dieta_140725-109947.jpg"
     },
     {
       "id": 5,
@@ -46,7 +46,7 @@
       "description": "Bardzo kaloryczna dieta bez zawartości mięsa.",
       "price": 90,
       "calories": "3200-3500",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://img.freepik.com/darmowe-zdjecie/bulgur-z-grillowana-piersia-kurczaka-swiezymi-warzywami-awokado-rukola-dieta-obiad-na-drewnianym-stole-zdrowe-jedzenie-widok-z-gory_193819-1040.jpg?size=626&ext=jpg"
     },
     {
       "id": 6,
@@ -54,7 +54,7 @@
       "description": "Pożegnaj zupki chińskie za bardzo przystępną cenę.",
       "price": 20,
       "calories": "1700-2000",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://st2.depositphotos.com/2082539/9415/i/950/depositphotos_94155804-stock-photo-dietary-supplements-for-weight-loss.jpg"
     },
     {
       "id": 7,
@@ -62,7 +62,7 @@
       "description": "Ekonomiczna dieta wege.",
       "price": 25,
       "calories": "1500-1800",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://image.freepik.com/darmowe-zdjecie/zestaw-modnych-produktow-diety-ketogenicznej_164638-7750.jpg"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "description": "/'Moje jedzenie lubi Nawet sam Lord Hagen./'",
       "price": 90,
       "calories": "2500-2800",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://img.freepik.com/darmowe-zdjecie/dieta-ketonowa-zdrowa-salatka-z-jajkami-przepiorczymi-i-serem_84130-3163.jpg?size=626&ext=jpg"
     },
     {
       "id": 9,
@@ -78,18 +78,10 @@
       "description": "Starodawna receptura w odświeżonym wydaniu.",
       "price": 70,
       "calories": "2200-2500",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://www.abpischools.org.uk/media/ji2h0tlj/balanced-diet-900x600.jpg"
     },
     {
       "id": 10,
-      "title": "Dieta ze starego obozu",
-      "description": "Poczuj smaki na jakich nasz szef kuchni nauczył się gotować.",
-      "price": 50,
-      "calories": "2000-2200",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
-    },
-    {
-      "id": 11,
       "title": "Dieta ognista",
       "description": "Niech twój brzuch od środka płonie.",
       "price": 90,
@@ -97,15 +89,90 @@
       "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
     },
     {
-      "id": 12,
+      "id": 11,
       "title": "Dieta extra",
       "description": "/'Mogę ją jeść bez końca./'",
       "price": 100,
       "calories": "2500-2700",
-      "photoUrl": "https://static.ktomalek.pl/blog/zdjecie/dieta%20lekkostrawna.jpg"
+      "photoUrl": "https://thumbs.dreamstime.com/b/%C5%BCywno%C5%9B%C4%87-wysokobia%C5%82kowa-ryby-mi%C4%99so-dr%C3%B3b-orzechy-jaja-i-warzywa-koncepcja-zdrowego-od%C5%BCywiania-si%C4%99-diety-widok-g%C3%B3rny-162219627.jpg"
     }
   ],
-  "users": [],
-  "codes": [],
-  "orders":[]
+  "users": [
+    {
+      "email": "test@test.test",
+      "password": "test",
+      "city": "test",
+      "street": "test",
+      "houseNumber": 21,
+      "postCode": "37-421",
+      "id": 1
+    }
+  ],
+  "codes": [
+    "ABC"
+  ],
+  "orders": [
+    {
+      "user_id": 1,
+      "ordersList": [
+        {
+          "id": 4,
+          "title": "Wege-ekonomiczna",
+          "description": "Zawiera śniadania bez zawartości mięsa.",
+          "price": 20,
+          "calories": "900-1100",
+          "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Wege-ekonomiczna",
+          "description": "Zawiera śniadania bez zawartości mięsa.",
+          "price": 20,
+          "calories": "900-1100",
+          "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Wege-ekonomiczna",
+          "description": "Zawiera śniadania bez zawartości mięsa.",
+          "price": 20,
+          "calories": "900-1100",
+          "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Wege-ekonomiczna",
+          "description": "Zawiera śniadania bez zawartości mięsa.",
+          "price": 20,
+          "calories": "900-1100",
+          "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Wege-ekonomiczna",
+          "description": "Zawiera śniadania bez zawartości mięsa.",
+          "price": 20,
+          "calories": "900-1100",
+          "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Wege-ekonomiczna",
+          "description": "Zawiera śniadania bez zawartości mięsa.",
+          "price": 20,
+          "calories": "900-1100",
+          "photoUrl": "http://8.s.dziennik.pl/pliki/1610000/1610178.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Wege",
+          "description": "Dieta dla osób chcących wyeliminować mięso.",
+          "price": 60,
+          "calories": "2500-2800",
+          "photoUrl": "http://bi.gazeta.pl/im/b4/08/15/z22054324V,Lepiej-podjadac-male-porcje--bo-wtedy-zwiazki-czyn.jpg"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }

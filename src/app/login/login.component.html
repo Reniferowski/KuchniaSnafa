@@ -1,16 +1,9 @@
-<h1>Login</h1>
-  <h5>Podaj email i hasło<h6>
-  <form>
-  <form [formGroup] = 'loginForm' (ngSubmit) = "login()">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input formControlName = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input formControlName = "password" type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
+<div class="formWrapper">
+  <h1>Zaloguj się</h1>
+  <form class="form" [formGroup] = 'loginForm' (ngSubmit) = "login()">
+    <input formControlName = "email" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adres E-mail"/>
+    <input formControlName = "password" type="password" id="exampleInputPassword1" placeholder="hasło"/>
+    <button type="submit">Login</button>
   </form>
   <a href="/register">Nie masz jeszcze konta?</a>
+</div>

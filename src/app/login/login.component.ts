@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../services/user.service';
 import { User } from 'src/types/user';
+import { NgToastService } from "ng-angular-popup";
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private toast: NgToastService
   ) {}
 
   ngOnInit(): void {
@@ -36,16 +39,25 @@ export class LoginComponent implements OnInit {
           );
         });
         if (user) {
-          alert('Udało się zalogować');
+          this.toast.info({
+            summary: "Witaj " + user.email,
+            duration: 5000
+          });
           this.userService.updateUserData(user);
           this.loginForm.reset();
           this.router.navigate(['']);
         } else {
-          alert('nie ma użytkownika o takiej kombinacji nazwy i hasła');
+          this.toast.error({
+            summary: "Nie ma takiego użytkownika",
+            duration: 5000
+          });
         }
       },
       (err) => {
-        alert('coś poszło nie tak');
+        this.toast.error({
+          summary: "Error",
+          duration: 5000
+        });
       }
     );
   }

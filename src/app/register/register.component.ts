@@ -3,6 +3,8 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CustomValidators } from '../validators/postCodeValidator';
+import { User } from 'src/types/user';
+import { NgToastService } from "ng-angular-popup";
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private toast: NgToastService
   ) {
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -31,16 +34,21 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.http
-      .post<any>('http://localhost:3000/users', this.registerForm.value)
+    this.http.post<User>('http://localhost:3000/users', this.registerForm.value)
       .subscribe(
         (res) => {
-          alert('Udało się zarejestrować');
+          this.toast.info({
+            summary: "Udało się zarejestrować",
+            duration: 5000
+          });
           this.registerForm.reset();
           this.router.navigate(['login']);
         },
         (err) => {
-          alert(JSON.stringify(err) + 'coś poszło nie tak');
+          this.toast.error({
+            summary: JSON.stringify(err) + 'coś poszło nie tak',
+            duration: 5000
+          });
         }
       );
   }

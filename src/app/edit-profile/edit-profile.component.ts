@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/types/user';
 import { UserService } from '../services/user.service';
 import { CustomValidators } from '../validators/postCodeValidator';
+import { NgToastService } from "ng-angular-popup";
 
 @Component({
   selector: 'app-edit-profile',
@@ -19,7 +20,8 @@ export class EditProfileComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private toast: NgToastService
   ) {
     this.editForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -47,12 +49,19 @@ export class EditProfileComponent implements OnInit {
     this.http
       .put<User>('http://localhost:3000/users/' + this.userToEdit.id, this.editForm.value)
       .subscribe();
+      this.toast.info({
+        summary: "Dane zostały zaktualizowane!",
+        duration: 3500
+      });
   }
 
   delete() {
     this.http.delete('http://localhost:3000/users/' + this.userToEdit.id)
         .subscribe();
-      alert("Delete successful");
+    this.toast.info({
+      summary: "Pomyślnie usunięto konto!",
+      duration: 3500
+    });
     this.router.navigate(['login']);
   }
 }

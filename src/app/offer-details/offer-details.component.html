@@ -1,3 +1,22 @@
 
-<p>Price - {{ offer.price }}</p>
-<p>Calories - {{ offer.calories }}</p>
+<div class="detailWrapper">
+    <div class="wrapper">
+    <button style="margin: 2em 0;" (click)="back()"> < Powrót</button>
+    <div class="details">
+        <div>
+            <img src="{{ offer.photoUrl }}" alt="offerPhoto" width="600px" height="400px">
+        </div>
+        <div class="info">
+            <h2>Dieta: {{offer.title}}</h2>
+            <h3>Opis</h3>
+            <p>{{offer.description}}</p>
+            <h3>Kaloryczność</h3>
+            <p>{{ offer.calories }}</p>
+            <h3>Cena\dzień</h3>
+            <p>{{ offer.price }} PLN</p>
+            <h3>Cena\miesiąc</h3>
+            <p>{{offer.price * 31}} PLN</p>
+        </div>
+        </div>
+    </div>
+</div>

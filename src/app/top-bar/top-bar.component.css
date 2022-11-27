@@ -1,0 +1,7 @@
+.top{
+    height: 6em;
+    background-color: rgb(57, 127, 219);
+    display: flex;
+    align-items: center;
+    padding-left: 0.5em;
+}

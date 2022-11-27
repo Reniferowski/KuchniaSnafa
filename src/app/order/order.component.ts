@@ -5,6 +5,7 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
 import { UserService } from '../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Order } from 'src/types/order';
+import { NgToastService } from "ng-angular-popup";
 
 @Component({
   selector: 'app-order',
@@ -19,7 +20,7 @@ export class OrderComponent implements OnInit {
   promo: string = '';
 
   constructor(private shoppingCartService: ShoppingCartService, private userService: UserService, private router: Router,
-    private http: HttpClient) {
+    private http: HttpClient, private toast: NgToastService) {
   }
 
   ngOnInit(): void {
@@ -36,10 +37,16 @@ export class OrderComponent implements OnInit {
           this.promoCodeUsed = true;
         }
         else if(this.promoCodeUsed) {
-          alert('kod w strachuuuu został już użyty')
+          this.toast.info({
+            summary: "Kod został już użyty!",
+            duration: 5000
+          });
         }
         else {
-          alert("kod nieprawidłowy elo gościu")
+          this.toast.error({
+            summary: "Nieprawidłowy kod",
+            duration: 5000
+          });
         }
    }
   )}
@@ -49,11 +56,17 @@ export class OrderComponent implements OnInit {
     .post<Order>('http://localhost:3000/orders', {user_id: this.userService.getLoggedUser().id, ordersList: this.shoppingCart})
     .subscribe(
       (res) => {
-        alert('Dodano zmówienie');
+        this.toast.info({
+          summary: "Dodano zamówienie",
+          duration: 5000
+        });
         this.router.navigate(['']);
       },
       (err) => {
-        alert(JSON.stringify(err) + 'coś poszło nie tak');
+        this.toast.error({
+          summary: JSON.stringify(err) + ' coś poszło nie tak',
+          duration: 5000
+        });
       }
     );
    }

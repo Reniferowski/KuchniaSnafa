@@ -18,6 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { OrderComponent } from './order/order.component';
+import { ButtonDisplayDirective } from './directives/button-display.directive';
+import { SearchFilterPipe } from './search-filter.pipe';
+import {NgToastModule} from "ng-angular-popup";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,8 @@ import { OrderComponent } from './order/order.component';
     ProfileComponent,
     EditProfileComponent,
     OrderComponent,
+    ButtonDisplayDirective,
+    SearchFilterPipe
   ],
   imports: [
     FormsModule,
@@ -39,6 +44,7 @@ import { OrderComponent } from './order/order.component';
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
+    NgToastModule
   ],
   schemas: [
     NO_ERRORS_SCHEMA
