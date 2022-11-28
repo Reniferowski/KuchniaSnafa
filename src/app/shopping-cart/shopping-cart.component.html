@@ -1,14 +1,26 @@
 <a class="checkoutButton" (click)="showCart()">
-  <img src="../../assets/cart_icon.png" alt="cart_icon" width="30px" height="30px" />
+  <img
+    src="../../assets/cart_icon.png"
+    alt="cart_icon"
+    width="30px"
+    height="30px"
+  />
 </a>
+<div class="itemsCount" *ngIf="shoppingCart.length > 0 && !isShow">
+  {{ shoppingCart.length > 9 ? "9+" : shoppingCart.length }}
+</div>
 
 <div class="shoppingCartWrapper" *ngIf="isShow && shoppingCart.length > 0">
   <div *ngFor="let product of shoppingCart" style="padding: 0.5em">
-    {{ product.title | uppercase}}
+    {{ product.title | uppercase }}
     <b>{{ product.price }} PLN\dzień</b>
   </div>
   <div class="orderInfo" *ngIf="shoppingCart.length > 0">
-    <div>SUMA: <b>{{totalPrice}} PLN\dzień</b></div>
-    <button (click)="setOrder()">Złóż zamówienie</button>
+    <div>
+      SUMA: <b>{{ totalPrice }} PLN\dzień</b>
+    </div>
+    <button (click)="setOrder()" style="margin: 0.5em 0">
+      Złóż zamówienie
+    </button>
   </div>
 </div>

@@ -13,19 +13,25 @@ export class ShoppingCartComponent implements OnInit {
   totalPrice: number = 0;
   isShow: boolean = false;
 
-
-  constructor(private shoppingCartService: ShoppingCartService, private router: Router) {}
+  constructor(
+    private shoppingCartService: ShoppingCartService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.shoppingCart = this.shoppingCartService.products;
   }
 
   showCart() {
-    this.totalPrice = this.shoppingCart.reduce((price,element) => price + element.price, 0);
+    this.totalPrice = this.shoppingCart.reduce(
+      (price, element) => price + element.price,
+      0
+    );
     this.isShow = !this.isShow;
   }
 
   setOrder() {
-    this.router.navigate(['order'])
+    this.isShow = !this.isShow;
+    this.router.navigate(['order']);
   }
 }

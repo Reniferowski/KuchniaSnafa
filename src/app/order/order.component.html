@@ -1,15 +1,23 @@
-<div>
-  <div *ngFor="let product of shoppingCart">
-    {{ product.title }}
+<div class="orderWrapper">
+  <div class="productsList">
+    <div class="product" *ngFor="let product of shoppingCart">
+      <p><b>Dieta: </b> {{ product.title }}</p>
+      <p><b>Kaloryczność:</b> {{ product.calories }} Kcal</p>
+      <p><b>Cena:</b> {{ product.price }} PLN</p>
+    </div>
   </div>
-  <div>
-    <p>{{ totalPrice }}</p>
-  </div>
-  <div>
-    <input type="text" name="promocode" placeholder="kod rabatowy" [(ngModel)]="promo">
-    <button (click)="checkPromoCode()" type="submit">Dodaj kod</button>
-  </div>
-  <div>
-    <button (click)="order()">Złóż zamówienie </button>
+
+  <div class="orderingWrapper">
+    <div class="ordering">
+      <p><b>Suma Zamówienia:</b> {{ totalPrice }} PLN</p>
+      <input
+        type="text"
+        name="promocode"
+        placeholder="kod rabatowy"
+        [(ngModel)]="promo"
+      />
+      <button (click)="checkPromoCode()" type="submit">Dodaj kod</button>
+      <button (click)="order()">Złóż zamówienie</button>
+    </div>
   </div>
 </div>
