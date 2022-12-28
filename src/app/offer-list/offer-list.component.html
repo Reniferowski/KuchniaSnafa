@@ -1,5 +1,8 @@
 <h1>Lista dostępnych cateringów</h1>
 <input class="filter" type="text" [(ngModel)]="searchText" placeholder="Wyszukaj catering"/>
+<button (click)="randomRecipe()">Wylosuj i dodaj przepis</button>
+<button (click)="showRecipes()">Wypisz dodane przepisy</button>
+<!-- <p>{{ recip.title }}</p> -->
 <div class="offersWrapper">
   <div class="offer" *ngFor="let offer of offers | searchFilter: searchText">
     <img class="offerImage" src="{{ offer.photoUrl }}" alt="photo" />

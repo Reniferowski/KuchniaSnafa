@@ -21,6 +21,7 @@ import { OrderComponent } from './order/order.component';
 import { ButtonDisplayDirective } from './directives/button-display.directive';
 import { SearchFilterPipe } from './search-filter.pipe';
 import {NgToastModule} from "ng-angular-popup";
+import { RecipeComponent } from './recipe/recipe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import {NgToastModule} from "ng-angular-popup";
     EditProfileComponent,
     OrderComponent,
     ButtonDisplayDirective,
-    SearchFilterPipe
+    SearchFilterPipe,
+    RecipeComponent
   ],
   imports: [
     FormsModule,
