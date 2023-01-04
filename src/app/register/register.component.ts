@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
       street: ['', [Validators.required]],
       houseNumber: [0, [Validators.required]],
       postCode: ['', [CustomValidators.postCodeValidator]],
+      recipes: [[]]
     });
   }
   ngOnInit(): void {

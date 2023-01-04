@@ -6,6 +6,8 @@ import { User } from 'src/types/user';
 import { UserService } from '../services/user.service';
 import { CustomValidators } from '../validators/postCodeValidator';
 import { NgToastService } from "ng-angular-popup";
+import { RecipeService } from '../services/recipe.service';
+import { Recipe } from 'src/types/recipe';
 
 @Component({
   selector: 'app-edit-profile',
@@ -15,13 +17,15 @@ import { NgToastService } from "ng-angular-popup";
 export class EditProfileComponent implements OnInit {
   public editForm!: FormGroup;
   public userToEdit: User;
+  _recipe!: Recipe;
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
     private http: HttpClient,
     private router: Router,
-    private toast: NgToastService
+    private toast: NgToastService,
+    private recipe: RecipeService,
   ) {
     this.editForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -63,5 +67,24 @@ export class EditProfileComponent implements OnInit {
       duration: 3500
     });
     this.router.navigate(['login']);
+  }
+
+  showRecipe(recipeId: number){
+    this.http.get<any>('https://api.spoonacular.com/recipes/' + recipeId + "/information?apiKey=d2dc1d4a1a4d4c8f8430075c14c8e152").subscribe(
+      (data) => {
+        console.log(data);
+        this._recipe = {
+          id: data["id"],
+          title: data["title"],
+          sourceURL: data["sourceUrl"],
+          time: data["readyInMinutes"],
+          instructions: data["instructions"],
+          ingredients: data["extendedIngredients"].map((element: any) => element["original"]),
+          photoURL: data["image"]
+        }
+        this.recipe.addRecipe(this._recipe);
+        this.router.navigate(['recip']);
+      }
+      )
   }
 }

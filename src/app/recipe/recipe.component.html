@@ -1,2 +1,23 @@
-<p>{{ _recipe.title }}</p>
-<p>{{ _recipe.photoURL }}</p>
+<div class="detailWrapper">
+    <div class="wrapper">
+        <div style="margin: 2em 0;">
+            <button (click)="back()">Strona Główna</button>
+            <button (click)="randomRecipe()">Wylosuj nowy przepis</button>
+            <button *ngIf="userData.id !== undefined" (click)="saveRecipe()">Dodaj do ulubionych</button>
+        </div>
+    <div class="details">
+        <div>
+            <img src="{{ _recipe.photoURL }}" alt="offerPhoto" width="600px" height="400px">
+        </div>
+        <div class="info">
+            <h2>Title: {{_recipe.title}}</h2>
+            <h3>Prepare Time</h3>
+            <p>{{_recipe.time}} minutes</p>
+            <h3>Ingredients</h3>
+            <p *ngFor="let ingredient of _recipe.ingredients">{{ingredient}}</p>
+        </div>
+    </div>
+    <h3>Instructions</h3>
+    <p [innerHTML]="_recipe.instructions"></p>
+    </div>
+</div>

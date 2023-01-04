@@ -1,3 +1,8 @@
+type RecipeData = {
+  id: number;
+  title: string;
+}
+
 export type User = {
   id: number;
   email: string;
@@ -6,4 +11,5 @@ export type User = {
   street: string;
   houseNumber: number;
   postCode: string;
+  recipes: RecipeData[];
 };
