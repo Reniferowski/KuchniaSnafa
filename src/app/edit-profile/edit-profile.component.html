@@ -51,13 +51,17 @@
     <button (click)="delete()" type="submit" id="delete">
       Usuń konto
     </button>
+    <button type="button" (click)="logOut()">
+      Wyloguj
+    </button>
   </form>
 </div>
-<div>
+<div class="recipesWrapper">
   <h1>Ulubione przepisy</h1>
     <ul>
       <li *ngFor="let recipe of userToEdit.recipes">
-        <a (click)="showRecipe(recipe.id)">{{recipe.title}}</a>
+        <p (click)="showRecipe(recipe.id)">{{recipe.title}}</p>
+        <button type="button" (click)="deleteRecipe(recipe.id, recipe.title)" class="delete">X</button>
       </li>
     </ul>
 </div>

@@ -103,8 +103,18 @@
       "password": "test",
       "city": "test",
       "street": "test",
-      "houseNumber": 21,
-      "postCode": "37-421",
+      "houseNumber": 1,
+      "postCode": "11-112",
+      "recipes": [
+        {
+          "id": 639137,
+          "title": "Chocolate Pavlova with Winter Fruit"
+        },
+        {
+          "id": 635741,
+          "title": "Bourbon Street Beignets"
+        }
+      ],
       "id": 1
     }
   ],

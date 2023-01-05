@@ -15,6 +15,7 @@ import { NgToastService } from "ng-angular-popup";
 export class RecipeComponent implements OnInit {
   _recipe!: Recipe;
   userData!: User;
+  isFavourite: boolean = false;
 
   constructor(
     private userService: UserService,
@@ -27,6 +28,7 @@ export class RecipeComponent implements OnInit {
   ngOnInit(): void {
     this._recipe = this.recipe.recipe;
     this.userData = this.userService.getLoggedUser();
+    this.isFavourite = this.recipe.inFavourites;
   }
 
   back() {
@@ -43,6 +45,8 @@ export class RecipeComponent implements OnInit {
         summary: "Przepis dodano do ulubionych!",
         duration: 3500
       });
+    this.isFavourite = true;
+    this.recipe.setInFavourites(true);
   }
 
   randomRecipe() {
@@ -60,10 +64,9 @@ export class RecipeComponent implements OnInit {
         this.recipe.addRecipe(this._recipe);
       }
       )
+      this.isFavourite = false;
+      this.recipe.setInFavourites(false);
   }
 
-  isFavourite():boolean{
-    return this.userData?.recipes?.some(recip => recip.id === this._recipe.id)
-  }
 
 }

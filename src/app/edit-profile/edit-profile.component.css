@@ -2,3 +2,44 @@
     display: flex;
     justify-content: space-evenly;
 }
+ul {
+    list-style: none;
+    padding: 0;
+}
+li{
+    display: flex;
+    margin-bottom: 0.5em;
+    border: 1px solid gray;
+    border-radius: 1em;
+    transition: 0.5s;
+    align-items: center;
+    position: relative;
+}
+.recipesWrapper h1{
+    text-align: center;
+}
+li:hover {
+    background-color: rgb(57, 127, 219);
+}
+
+.delete {
+    height: 2em;
+    width: 2em;
+    background-color: red;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    position: absolute;
+    right: 5;
+}
+
+li:hover .delete {
+    display: flex;
+}
+p{
+    cursor: pointer;
+    margin-left: 0.25em;
+    padding-right: 1em;
+}

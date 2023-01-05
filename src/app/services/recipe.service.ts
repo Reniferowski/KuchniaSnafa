@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeService {
   _recipe!: Recipe;
+  _inFavourites: boolean = false;
 
   constructor(private http: HttpClient,) { }
 
@@ -18,4 +19,11 @@ export class RecipeService {
     return this._recipe;
   }
 
+  setInFavourites(fav: boolean) {
+    this._inFavourites = fav;
+  }
+
+  get inFavourites(): boolean{
+    return this._inFavourites;
+  }
 }

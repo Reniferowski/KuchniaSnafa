@@ -64,6 +64,7 @@ export class OfferListComponent implements OnInit {
           photoURL: data["recipes"][0]["image"]
         }
         this.recipe.addRecipe(this.recip);
+        this.recipe.setInFavourites(false);
         this.router.navigate(['recip']);
       }
       )

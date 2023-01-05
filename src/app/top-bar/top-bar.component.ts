@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./top-bar.component.css'],
 })
 export class TopBarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+   ) {}
 
   ngOnInit(): void {}
 

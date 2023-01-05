@@ -34,6 +34,7 @@ export class EditProfileComponent implements OnInit {
       street: ['', [Validators.required]],
       houseNumber: [0, [Validators.required]],
       postCode: ['', [CustomValidators.postCodeValidator]],
+      recipes:[[]]
     });
     this.userToEdit = this.userService.getLoggedUser();
   }
@@ -46,6 +47,7 @@ export class EditProfileComponent implements OnInit {
       street: this.userToEdit?.street || '',
       houseNumber: this.userToEdit?.houseNumber || '',
       postCode: this.userToEdit?.postCode || '',
+      recipes: this.userToEdit?.recipes || []
     });
   }
 
@@ -57,7 +59,8 @@ export class EditProfileComponent implements OnInit {
         summary: "Dane zostały zaktualizowane!",
         duration: 3500
       });
-  }
+      this.userService.updateUserData(this.editForm.value);
+    }
 
   delete() {
     this.http.delete('http://localhost:3000/users/' + this.userToEdit.id)
@@ -72,7 +75,6 @@ export class EditProfileComponent implements OnInit {
   showRecipe(recipeId: number){
     this.http.get<any>('https://api.spoonacular.com/recipes/' + recipeId + "/information?apiKey=d2dc1d4a1a4d4c8f8430075c14c8e152").subscribe(
       (data) => {
-        console.log(data);
         this._recipe = {
           id: data["id"],
           title: data["title"],
@@ -83,8 +85,30 @@ export class EditProfileComponent implements OnInit {
           photoURL: data["image"]
         }
         this.recipe.addRecipe(this._recipe);
+        this.recipe.setInFavourites(true);
         this.router.navigate(['recip']);
       }
       )
+  }
+
+  deleteRecipe(recipeId: number, recipeTitle: string ) {
+    const confirmAction = confirm("Czy na pewno chcesz usunąć przepis z ulubionych?");
+    if(confirmAction){
+      const elementId = this.userToEdit.recipes?.indexOf({id: recipeId, title: recipeTitle});
+      this.userToEdit.recipes?.splice(elementId, 1)
+
+      this.http.put<User>('http://localhost:3000/users/' + this.userToEdit.id, this.userToEdit)
+      .subscribe();
+      this.toast.info({
+        summary: "Przepis usunięto z ulubionych!",
+        duration: 3500
+      });
+      this.userService.updateUserData(this.userToEdit);
+    }
+  }
+
+  logOut() {
+    this.userService.logOutUser()
+    this.router.navigate([''])
   }
 }
