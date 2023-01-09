@@ -15,17 +15,18 @@ import { NgToastService } from "ng-angular-popup";
 export class OrderComponent implements OnInit {
 
   shoppingCart: OfferClass[] = [];
-  totalPrice: number = 0;
   promoCodeUsed: boolean = false;
   promo: string = '';
 
-  constructor(private shoppingCartService: ShoppingCartService, private userService: UserService, private router: Router,
+  constructor(
+    public shoppingCartService: ShoppingCartService,
+    private userService: UserService,
+    private router: Router,
     private http: HttpClient, private toast: NgToastService) {
   }
 
   ngOnInit(): void {
     this.shoppingCart = this.shoppingCartService.products;
-    this.totalPrice = this.shoppingCart.reduce((price,element) => price + element.price, 0)
 }
 
   checkPromoCode() {
@@ -33,7 +34,7 @@ export class OrderComponent implements OnInit {
       (res) => {
         const code = res.find(value => value === this.promo)
         if (code && !this.promoCodeUsed){
-          this.totalPrice *= 0.8
+          this.shoppingCartService.updateTotalValue();
           this.promoCodeUsed = true;
         }
         else if(this.promoCodeUsed) {
@@ -73,6 +74,10 @@ export class OrderComponent implements OnInit {
    }
 
    deleteElement(product: OfferClass) {
+    const confirmAction = confirm("Czy na pewno chcesz usunąć dietę z zamówienia?");
+
+    if(confirmAction) {
     this.shoppingCartService.deleteProduct(product);
-   }
+    }
+  }
 }

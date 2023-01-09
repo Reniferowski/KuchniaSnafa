@@ -7,6 +7,7 @@ import { OfferClass } from 'src/types/offer';
 export class ShoppingCartService {
   _products: OfferClass[] = [];
   _totalValue: number = 0;
+  _discounted: boolean = false;
 
   constructor() {}
 
@@ -23,8 +24,18 @@ export class ShoppingCartService {
     return this._totalValue;
   }
 
+  updateTotalValue() {
+    this._totalValue *= 0.8;
+    this._discounted = true;
+  }
+
   deleteProduct(product: OfferClass) {
-    this._totalValue -= product.price;
+    if(this._discounted) {
+    this._totalValue -= product.price * 0.8;
+    }
+    else {
+      this._totalValue -= product.price;
+    }
     this._products.splice(this._products.indexOf(product), 1);
   }
 
