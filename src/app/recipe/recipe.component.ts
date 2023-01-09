@@ -40,7 +40,6 @@ export class RecipeComponent implements OnInit {
 
     this.http.put<User>('http://localhost:3000/users/' + this.userData.id, this.userData)
       .subscribe();
-      console.log(this.userData)
       this.toast.info({
         summary: "Przepis dodano do ulubionych!",
         duration: 3500

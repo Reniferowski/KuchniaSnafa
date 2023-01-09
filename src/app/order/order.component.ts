@@ -60,6 +60,7 @@ export class OrderComponent implements OnInit {
           summary: "Dodano zamówienie",
           duration: 5000
         });
+        this.shoppingCartService.clearCart();
         this.router.navigate(['']);
       },
       (err) => {
@@ -69,5 +70,9 @@ export class OrderComponent implements OnInit {
         });
       }
     );
+   }
+
+   deleteElement(product: OfferClass) {
+    this.shoppingCartService.deleteProduct(product);
    }
 }

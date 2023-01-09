@@ -10,23 +10,17 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
   shoppingCart: OfferClass[] = [];
-  totalPrice: number = 0;
   isShow: boolean = false;
 
   constructor(
-    private shoppingCartService: ShoppingCartService,
+    public shoppingCartService: ShoppingCartService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.shoppingCart = this.shoppingCartService.products;
   }
 
   showCart() {
-    this.totalPrice = this.shoppingCart.reduce(
-      (price, element) => price + element.price,
-      0
-    );
     this.isShow = !this.isShow;
   }
 

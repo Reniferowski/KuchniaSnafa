@@ -53,7 +53,6 @@ export class OfferListComponent implements OnInit {
   randomRecipe() {
     this.http.get<any>('https://api.spoonacular.com/recipes/random/?apiKey=d2dc1d4a1a4d4c8f8430075c14c8e152&number=1').subscribe(
       (data) => {
-        console.log(data);
         this.recip = {
           id: data["recipes"][0]["id"],
           title: data["recipes"][0]["title"],
@@ -68,13 +67,5 @@ export class OfferListComponent implements OnInit {
         this.router.navigate(['recip']);
       }
       )
-  }
-
-  showRecipes() {
-    // this.recipes.forEach(element => {
-    //   // console.log(element.title)
-    //   console.log(element)
-    // });
-    console.log(this.recipe.recipe)
   }
 }

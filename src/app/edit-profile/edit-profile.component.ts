@@ -63,6 +63,8 @@ export class EditProfileComponent implements OnInit {
     }
 
   delete() {
+    const confirmAction = confirm("Czy na pewno chcesz usunąć konto?");
+    if(confirmAction){
     this.http.delete('http://localhost:3000/users/' + this.userToEdit.id)
         .subscribe();
     this.toast.info({
@@ -70,6 +72,7 @@ export class EditProfileComponent implements OnInit {
       duration: 3500
     });
     this.router.navigate(['login']);
+  }
   }
 
   showRecipe(recipeId: number){

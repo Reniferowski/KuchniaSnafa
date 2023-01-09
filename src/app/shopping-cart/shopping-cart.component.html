@@ -6,18 +6,18 @@
     height="30px"
   />
 </a>
-<div class="itemsCount" *ngIf="shoppingCart.length > 0 && !isShow">
-  {{ shoppingCart.length > 9 ? "9+" : shoppingCart.length }}
+<div class="itemsCount" *ngIf="shoppingCartService.products.length > 0 && !isShow">
+  {{ shoppingCartService.products.length > 9 ? "9+" : shoppingCartService.products.length }}
 </div>
 
-<div class="shoppingCartWrapper" *ngIf="isShow && shoppingCart.length > 0">
-  <div *ngFor="let product of shoppingCart" style="padding: 0.5em">
+<div class="shoppingCartWrapper" *ngIf="isShow && shoppingCartService.products.length > 0">
+  <div *ngFor="let product of shoppingCartService.products" style="padding: 0.5em">
     {{ product.title | uppercase }}
     <b>{{ product.price }} PLN\dzień</b>
   </div>
-  <div class="orderInfo" *ngIf="shoppingCart.length > 0">
+  <div class="orderInfo" *ngIf="shoppingCartService.products.length > 0">
     <div>
-      SUMA: <b>{{ totalPrice }} PLN\dzień</b>
+      SUMA: <b>{{ shoppingCartService.totalValue }} PLN\dzień</b>
     </div>
     <button (click)="setOrder()" style="margin: 0.5em 0">
       Złóż zamówienie

@@ -4,6 +4,7 @@
       <p><b>Dieta: </b> {{ product.title }}</p>
       <p><b>Kaloryczność:</b> {{ product.calories }} Kcal</p>
       <p><b>Cena:</b> {{ product.price }} PLN</p>
+      <button type="button" (click)="deleteElement(product)">Usuń</button>
     </div>
   </div>
 

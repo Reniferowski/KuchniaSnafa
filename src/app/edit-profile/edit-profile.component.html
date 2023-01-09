@@ -48,7 +48,7 @@
     />
     <p *ngIf="editForm.controls['postCode'].hasError('invalid')">Nieprawidłowy kod pocztowy</p>
     <button appButtonDisplay [condition]="!editForm.valid" type="submit">Zapisz zmiany</button>
-    <button (click)="delete()" type="submit" id="delete">
+    <button (click)="delete()" type="button" id="delete">
       Usuń konto
     </button>
     <button type="button" (click)="logOut()">
