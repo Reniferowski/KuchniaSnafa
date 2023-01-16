@@ -3,7 +3,7 @@
         <div style="margin: 2em 0;">
             <button (click)="back()">Strona Główna</button>
             <button (click)="randomRecipe()">Wylosuj nowy przepis</button>
-            <button *ngIf="userData.id !== undefined && !isFavourite" (click)="saveRecipe()">Dodaj do ulubionych</button>
+            <button *ngIf="userData !== null && !isFavourite" (click)="saveRecipe()">Dodaj do ulubionych</button>
         </div>
     <div class="details">
         <div>
